@@ -1,0 +1,85 @@
+html {
+  border: 5px solid #707070;
+  min-height: 100%;
+}
+
+.container {
+  margin: 4rem;
+}
+
+h1 {
+  font-family: "Hind", sans-serif;
+  font-size: 3.25rem;
+  font-weight: 700;
+  margin-left: 1.5rem;
+}
+
+.info {
+  margin-top: 5rem;
+}
+.info h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4.1875rem;
+  font-weight: 700;
+  text-align: left;
+  line-height: 5.125rem;
+  margin-left: 2rem;
+}
+.info h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 500;
+  position: relative;
+  bottom: 3rem;
+  line-height: 3.75rem;
+  margin-left: 2rem;
+}
+.info p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  position: relative;
+  bottom: 6rem;
+  text-align: left;
+  color: #9E7474;
+  line-height: 3.375rem;
+  margin-left: 2rem;
+}
+
+.linea-vertical {
+  border-left: 0.625rem solid #D85A5A;
+  height: 18.5625rem;
+  position: relative;
+  right: 2rem;
+}
+
+.btns {
+  margin-top: 10rem;
+}
+.btns button {
+  border: 1px solid #707070;
+  padding: 1.875rem 3.75rem;
+  margin-right: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: white;
+  border-radius: 5.0625rem;
+  transition: all 0.3s;
+}
+.btns button:hover {
+  background: transparent;
+  color: #D85A5A;
+}
+.btns button:first-child {
+  background-color: #D85A5A;
+  color: white;
+}
+.btns button:last-child {
+  background-color: white;
+  color: #D85A5A;
+  border: none;
+  box-shadow: 0.125rem 0.3125rem 0.4375rem 0rem #707070;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,104 @@
+@use  'variables';
+
+@mixin font-weight($weight) {
+    @if ($weight == 'regular') {
+        font-weight: 400;
+    } @else if ($weight == 'bold') {
+        font-weight: 700;
+    } @else if ($weight == 'medium') {
+        font-weight: 500;
+    }
+}
+
+//funcion para dividir los pixeles en rem
+@function rem($px) {
+    @return calc($px / 16)+rem;
+}
+    
+
+
+//para poner el border al html
+html {
+ border: 5px solid variables.$border;
+ min-height: 100%;
+}
+//container
+.container{
+ margin: 4rem;
+}
+h1{
+    font-family: 'Hind', sans-serif;
+    font-size: rem(52);
+    @include font-weight('bold');
+    margin-left: 1.5rem;
+
+}
+
+.info{
+    margin-top: 5rem;
+    h2{
+        font-family: 'Poppins', sans-serif;
+        font-size: rem(67);
+        @include font-weight('bold');
+        text-align: left;
+        line-height: rem(82);
+        margin-left: 2rem;
+        
+    }
+    h3{
+        font-family: 'Poppins', sans-serif;
+        font-size: rem(50);
+        @include font-weight('medium');
+        position: relative;
+        bottom: 3rem;
+        
+        line-height: rem(60);
+        margin-left: 2rem;
+    }
+    p{
+        font-family: 'Raleway', sans-serif;
+        font-size: rem(22);
+        @include font-weight('regular');
+        position: relative;
+        bottom: 6rem;
+        text-align: left;
+        color: variables.$red-other-text;
+        line-height: rem(54);
+        margin-left: 2rem;
+    }
+}
+//linea vertical
+.linea-vertical{
+    border-left: rem(10) solid variables.$red;
+    height: rem(297);
+    position: relative;
+    right: 2rem;
+}
+.btns{
+    margin-top: 10rem;
+    button{
+        border: 1px solid variables.$border;
+        padding: rem(30) rem(60);
+        margin-right: 2rem;
+        font-family: 'Raleway', sans-serif;
+        font-size: rem(20);
+        @include font-weight('medium');
+        background: white;
+        border-radius: rem(81);
+        transition: all .3s;
+        &:hover{
+            background: transparent;
+            color: variables.$red;
+        }
+    }
+    button:first-child{
+        background-color: variables.$red;
+         color: white;
+    }
+    button:last-child{
+        background-color: white;
+        color: variables.$red;
+        border: none;
+        box-shadow: rem(2) rem(5) rem(7) 0rem variables.$border;
+    }
+}
