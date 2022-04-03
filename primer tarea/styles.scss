@@ -1,11 +1,16 @@
-@use  'variables';
+@use 'variables';
+
 
 @mixin font-weight($weight) {
-    @if ($weight == 'regular') {
+    @if ($weight=='regular') {
         font-weight: 400;
-    } @else if ($weight == 'bold') {
+    }
+
+    @else if ($weight=='bold') {
         font-weight: 700;
-    } @else if ($weight == 'medium') {
+    }
+
+    @else if ($weight=='medium') {
         font-weight: 500;
     }
 }
@@ -14,49 +19,51 @@
 @function rem($px) {
     @return calc($px / 16)+rem;
 }
-    
-
-
-//para poner el border al html
 html {
- border: 5px solid variables.$border;
- min-height: 100%;
+    border: rem(4) solid variables.$border;
+    overflow-x: hidden;
+    //definir ancho y altura
+    background-color:white;
+    max-height: rem(1080);
 }
-//container
-.container{
- margin: 4rem;
+.container {
+    margin: 4rem;
 }
-h1{
-    font-family: 'Hind', sans-serif;
+
+h1 {
+    font-family: variables.$hind;
     font-size: rem(52);
     @include font-weight('bold');
     margin-left: 1.5rem;
 
 }
 
-.info{
+.info {
     margin-top: 5rem;
-    h2{
-        font-family: 'Poppins', sans-serif;
+
+    h2 {
+        font-family: variables.$poppins;
         font-size: rem(67);
         @include font-weight('bold');
         text-align: left;
         line-height: rem(82);
         margin-left: 2rem;
-        
+
     }
-    h3{
-        font-family: 'Poppins', sans-serif;
+
+    h3 {
+        font-family: variables.$poppins;
         font-size: rem(50);
         @include font-weight('medium');
         position: relative;
         bottom: 3rem;
-        
+
         line-height: rem(60);
         margin-left: 2rem;
     }
-    p{
-        font-family: 'Raleway', sans-serif;
+
+    p {
+        font-family: variables.$raleway;
         font-size: rem(22);
         @include font-weight('regular');
         position: relative;
@@ -67,38 +74,122 @@ h1{
         margin-left: 2rem;
     }
 }
-//linea vertical
-.linea-vertical{
+.linea-vertical {
     border-left: rem(10) solid variables.$red;
     height: rem(297);
     position: relative;
     right: 2rem;
 }
-.btns{
+
+.btns {
     margin-top: 10rem;
-    button{
+
+    button {
         border: 1px solid variables.$border;
         padding: rem(30) rem(60);
         margin-right: 2rem;
-        font-family: 'Raleway', sans-serif;
+        font-family: variables.$raleway;
         font-size: rem(20);
         @include font-weight('medium');
         background: white;
         border-radius: rem(81);
         transition: all .3s;
-        &:hover{
-            background: transparent;
-            color: variables.$red;
+
+        &:hover {
+            cursor: pointer;
         }
     }
-    button:first-child{
+
+    button:first-child {
         background-color: variables.$red;
-         color: white;
+        color: white;
     }
-    button:last-child{
+
+    button:last-child {
         background-color: white;
         color: variables.$red;
         border: none;
         box-shadow: rem(2) rem(5) rem(7) 0rem variables.$border;
     }
+}
+
+.footer-text {
+    font-family: variables.$raleway;
+    font-size: rem(22);
+    text-align: left;
+    margin-top: 2rem;
+
+    p:first-child {
+        @include font-weight('bold');
+    }
+
+    p:last-child {
+        @include font-weight('regular');
+        color: variables.$red-other-text;
+    }
+
+}
+
+
+.arrow {
+
+    border-bottom: rem(5) solid variables.$red;
+    margin-left: 6.8rem;
+    width: rem(124);
+
+}
+
+
+.triangle-arrow-top {
+    border-bottom: rem(5) solid variables.$red;
+    width: rem(25);
+    position: relative;
+    left: 13.2rem;
+    top: -.8rem;
+    transform: rotate(40deg);
+}
+
+.triangle-arrow-bot {
+    border-top: rem(5) solid variables.$red;
+    width: rem(25);
+    position: relative;
+    left: 13.2rem;
+    top: -.2rem;
+    transform: rotate(-40deg);
+}
+
+.cart {
+    
+    position: absolute;
+    left: 90%;
+    bottom: 78%;
+    text-align: center;
+    i{
+        font-size: rem(40);
+        margin-top: 1.5rem;
+        color: white;
+        
+    }
+}
+.square {
+    width: rem(69);
+    height: rem(89);
+    background-color: black;
+    border: 1px solid variables.$border;
+    border-radius: rem(10);
+    //redondear el borde derecho
+    border-bottom-right-radius: rem(50);
+    
+}
+img{
+       position: absolute;
+    width: 90%;
+    /* border-radius: 204.625rem; */
+    object-fit: contain;
+    /* margin-left: 35rem; */
+    padding-left: 24rem;
+    /* margin-bottom: 20rem; */
+    top:9rem;
+    // transform: rotate(5deg);
+    max-height: 52rem;
 }
