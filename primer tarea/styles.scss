@@ -123,7 +123,7 @@ h1 {
         @include font-weight('bold');
     }
 
-    p:last-child {
+    p:nth-child(2) {
         @include font-weight('regular');
         color: variables.$red-other-text;
     }

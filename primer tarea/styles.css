@@ -92,7 +92,7 @@ h1 {
 .footer-text p:first-child {
   font-weight: 700;
 }
-.footer-text p:last-child {
+.footer-text p:nth-child(2) {
   font-weight: 400;
   color: #9E7474;
 }
